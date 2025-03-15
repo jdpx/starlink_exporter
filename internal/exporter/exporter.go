@@ -259,9 +259,7 @@ type Exporter struct {
 
 // New returns an initialized Exporter.
 func New(address string) (*Exporter, error) {
-	ctx, connCancel := context.WithTimeout(context.Background(), time.Second*3)
-	defer connCancel()
-	conn, err := grpc.DialContext(ctx, address, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
+	conn, err := grpc.NewClient(address, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		return nil, fmt.Errorf("error creating underlying gRPC connection to starlink dish: %s", err.Error())
 	}
