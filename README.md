@@ -16,9 +16,9 @@ A [Starlink](https://www.starlink.com/) exporter for Prometheus. Not affiliated 
 ![os/arch](https://img.shields.io/badge/os%2Farch-armv7-yellow)
 [![Go Report Card](https://goreportcard.com/badge/github.com/danopstech/starlink_exporter)](https://goreportcard.com/report/github.com/danopstech/starlink_exporter)
 
-If you would like a pre-packaged system to monitor you Starlink system please check out https://github.com/danopstech/starlink. It includes this exporter, speedtest_exporter, blackbox_exporter, Grafana and Prometheus in one Docker Compose file.
+If you would like a pre-packaged system to monitor you Starlink system please check out <https://github.com/danopstech/starlink>. It includes this exporter, speedtest_exporter, blackbox_exporter, Grafana and Prometheus in one Docker Compose file.
 
-## Usage:
+## Usage
 
 ### Flags
 
@@ -47,6 +47,7 @@ For pre-built binaries please take a look at the [releases](https://github.com/d
 Docker Images can be found at [GitHub Container Registry](https://github.com/orgs/danopstech/packages/container/package/starlink_exporter) & [Dockerhub](https://hub.docker.com/r/danopstech/starlink_exporter).
 
 Example:
+
 ```bash
 docker pull ghcr.io/danopstech/starlink_exporter:latest
 
@@ -70,7 +71,7 @@ scrape_configs
 ...
 ```
 
-## Exported Metrics:
+## Exported Metrics
 
 ```text
 # HELP starlink_dish_alert_mast_not_near_vertical Status of mast position
@@ -141,9 +142,9 @@ scrape_configs
 # TYPE starlink_dish_wedge_fraction_obstruction_ratio gauge
 ```
 
-## Example Grafana Dashboard:
+## Example Grafana Dashboard
 
-https://grafana.com/grafana/dashboards/14337
+<https://grafana.com/grafana/dashboards/14337>
 
 <p align="center">
 	<img src="https://github.com/danopstech/starlink_exporter/raw/main/.docs/assets/screenshot.jpg" width="95%">

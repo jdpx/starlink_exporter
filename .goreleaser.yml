@@ -33,18 +33,18 @@ archives:
       - none*
 
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 
 dockers:
   - image_templates:
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-amd64
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-amd64
     use: buildx
     dockerfile: Dockerfile
     build_flag_templates:
       - "--platform=linux/amd64"
 
   - image_templates:
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-arm7
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-arm7
     use: buildx
     dockerfile: Dockerfile
     goarch: arm
@@ -53,7 +53,7 @@ dockers:
       - "--platform=linux/arm/v7"
 
   - image_templates:
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-arm64
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-arm64
     use: buildx
     dockerfile: Dockerfile
     goarch: arm64
@@ -61,14 +61,13 @@ dockers:
       - "--platform=linux/arm64/v8"
 
 docker_manifests:
-  # dockerhub
-  - name_template: sysdigdan/{{.ProjectName}}:v{{ .Version }}
+  - name_template: ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}
     image_templates:
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-amd64
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-arm64
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-arm7
-  - name_template: sysdigdan/{{.ProjectName}}:latest
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-amd64
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-arm64
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-arm7
+  - name_template: ghcr.io/jdpx/{{.ProjectName}}:latest
     image_templates:
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-amd64
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-arm64
-      - sysdigdan/{{.ProjectName}}:v{{ .Version }}-arm7
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-amd64
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-arm64
+      - ghcr.io/jdpx/{{.ProjectName}}:v{{ .Version }}-arm7
