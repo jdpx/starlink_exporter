@@ -1,4 +1,4 @@
-name: build
+name: Build
 
 on:
   push:
@@ -7,12 +7,16 @@ on:
     tags-ignore:
       - v*
   pull_request:
-      branches:
-        - main
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
